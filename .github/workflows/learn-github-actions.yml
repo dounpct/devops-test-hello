@@ -7,7 +7,7 @@ on:
       - 'releases/**'
       - '!releases/**-alpha'
     tags:
-      - *
+      - '*'
 jobs:
   check-bats-version:
     runs-on: ubuntu-latest

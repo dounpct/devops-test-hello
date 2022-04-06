@@ -10,3 +10,7 @@ jobs:
           node-version: '14'
       - run: npm install -g bats
       - run: bats -v
+      - shell: bash
+        run: |
+          expr 1 + 1 > output.log
+      - run: cat output.log

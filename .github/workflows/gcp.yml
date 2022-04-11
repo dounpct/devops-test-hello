@@ -78,4 +78,5 @@ jobs:
     # Deploy the Docker image to the GKE cluster
     - name: Deploy
       run: |-
-        kubectl create deployment $DEPLOYMENT_NAME --image gcr.io/$PROJECT_ID/$IMAGE/$DEPLOYMENT_NAME:$GITHUB_SHA  --port=80
+        kubectl create deployment $DEPLOYMENT_NAME --image gcr.io/$PROJECT_ID/$IMAGE/$DEPLOYMENT_NAME:$GITHUB_SHA  --port=8080
+        kubectl expose deployment $DEPLOYMENT_NAME --name $DEPLOYMENT_NAME-svc --port 8080 --target-port=80
